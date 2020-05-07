@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/thePROZACH25/burger/issues"
   },
-  "homepage": "https://github.com/thePROZACH25/burger#readme"
+  "homepage": "https://github.com/thePROZACH25/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1",
+    "orm": "^5.0.5"
+  }
 }
