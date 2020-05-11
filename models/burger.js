@@ -3,18 +3,18 @@ var orm = require("../config/orm.js");
 
 var burger = {
   all: function(cb) {
-    orm.selectALL("burgers", function(res) {
+    orm.all("burgers", function(res) {
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
-    orm.selectALL("burgers", cols, vals, function(res) {
+    orm.all("burgers", cols, vals, function(res) {
       cb(res);
     });
   },
   devourIt: function(objColVals, condition, cb) {
-    orm.selectALL("burgers", objColVals, condition, function(res) {
+    orm.all("burgers", objColVals, condition, function(res) {
       cb(res);
     });
   },
