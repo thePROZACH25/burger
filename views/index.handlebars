@@ -8,9 +8,9 @@
             <div class="row">
                 <div class="form-group">
 
-                    <input id="newburger" type="text" class="form-control" placeholder="Add a burger!">
+                    <input id="newburger" type="text" class="form-control" placeholder="Add a burger!" name="burger_name">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary newBurgers" id="submitBtn">Submit</button>
             </div>
         </div>
 
@@ -19,24 +19,39 @@
 
                 <div class="card" style="width: 23rem;">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                     
+                        <h4 class="card-title">Burgers to Eat</h4>
+                        <hr>
+
+                        <ul>
+                            {{#each burgers}} 
+                            {{#unless devoured}}
+                            <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                            <button type="button" class="eatBurger btn btn-warning" id="devourBurger"data-id="{{this.id}}"
+                                data-newDevoured="{{devour}}">Eat Burger<span class="fa fa-usd"></span></button>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+
                     </div>
                 </div>
 
 
                 <div class="card" style="width: 23rem;">
                     <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                        
+                        <h4 class="card-title">Burgers you Devoured!</h4>
+                        <hr>
+
+                        <ul>
+                            {{#each burgers}}
+                            {{#if devoured}}
+                            <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                            
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+
+
+
                     </div>
                 </div>
 
